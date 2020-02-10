@@ -2,7 +2,7 @@
 
 def isPrime(x):
     flag = True
-    for a in xrange(2,x-1):
+    for a in range(2,x-1):
         if x % a == 0:
             flag = False
             break
@@ -27,7 +27,7 @@ def findPrimesBelow(x):
     num = 1
     arr = []
     while lastPrime < x:
-        print num
+        print(num)
         if isPrime(num) == True:
             lastPrime = num
             arr.append(num)
