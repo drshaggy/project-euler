@@ -18,6 +18,31 @@ def is_prime(n):
 
 
 # ---------------------------------------------------------
+# Factor Functions
+# ---------------------------------------------------------
+def get_factors(n):
+    factors = []
+    for i in range(1, int((n / 2) + 1)):
+        if n % i == 0:
+            factors.append(i)
+    factors.append(n)
+    return factors
+
+
+def get_prime_factors(n):
+    i = 2
+    while i * i <= n:
+        if n % i == 0:
+            n /= i
+            yield i
+        else:
+            i += 1
+
+    if n > 1:
+        yield n
+
+
+# ---------------------------------------------------------
 # A class that will time the execution
 # ---------------------------------------------------------
 class Timer:

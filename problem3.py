@@ -1,7 +1,7 @@
 from Prime import isPrime
 
-def findLargestPrimeFactor(x):
-    for b in xrange(2,x-1):
+def find_largest_prime_factor(x):
+    for b in range(2,x-1):
         if x % b == 0:
             if isPrime(x/b) == True:
                 pf = x/b
@@ -15,4 +15,4 @@ def findLargestPrimeFactor(x):
 x=13195
 y=600851475143
 
-print findLargestPrimeFactor(y)
+print(find_largest_prime_factor(y))
