@@ -2,7 +2,7 @@
 
 def isPrime(x):
     flag = True
-    for a in range(2,x-1):
+    for a in range(2, x - 1):
         if x % a == 0:
             flag = False
             break
@@ -10,10 +10,11 @@ def isPrime(x):
             pass
     return flag
 
+
 def findPrime(x):
     numOfPrimes = 0
     num = 1
-    while numOfPrimes != x+1:
+    while numOfPrimes != x + 1:
         if isPrime(num) == True:
             lastPrime = num
             numOfPrimes += 1
@@ -21,6 +22,7 @@ def findPrime(x):
             pass
         num += 1
     return lastPrime
+
 
 def findPrimesBelow(x):
     lastPrime = 0
@@ -34,4 +36,4 @@ def findPrimesBelow(x):
         else:
             pass
         num += 1
-    return arr[0:len(arr)-1]
+    return arr[0:len(arr) - 1]
