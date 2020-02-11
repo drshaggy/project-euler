@@ -17,6 +17,27 @@ def generate_routes(grid):
             pass
 
 
+class Route:
+    def __init__(self, grid):
+        self.grid = grid
+        self.size = len(grid[0])
+        self.x = 0
+        self.y = 0
+
+    def get_list_of_legal_moves(self):
+        moves = []
+        if 0 <= self.x + 1 < self.size:
+            moves.append(grid[self.y][self.x + 1])
+        if 0 <= self.y + 1 < self.size:
+            moves.append(grid[self.y + 1][self.x])
+        return moves
+
+    def move(self, x, y):
+        self.x = x
+        self.y = y
+        return grid[y][x]
+
+
 # ---------------------------------------------------------
 # Execution
 # ---------------------------------------------------------
