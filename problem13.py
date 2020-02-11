@@ -1,6 +1,10 @@
 from helpers import Timer
 import numpy as np
 
+
+# ---------------------------------------------------------
+# Execution
+# ---------------------------------------------------------
 if __name__ == "__main__":
     timer = Timer()
     timer.start()
