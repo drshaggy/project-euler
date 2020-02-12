@@ -1,4 +1,20 @@
 import time
+from matplotlib import pyplot as plt
+
+
+# ---------------------------------------------------------
+# A class that will time the execution
+# ---------------------------------------------------------
+def plot_from_file(file):
+    with open(file, 'r') as file:
+        xs = []
+        ys = []
+        for line in file:
+            x, y = line.split(' ')
+            xs.append(int(x))
+            ys.append(int(y))
+        plt.scatter(xs, ys)
+        plt.savefig('plots/problem15.png')
 
 
 # ---------------------------------------------------------
