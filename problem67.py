@@ -31,6 +31,7 @@ def triangle_to_array(triangle):
 def max_cost_path(matrix):
     previous_index = None
     for i, row in enumerate(matrix):
+        print(i)
         if i == 0:
             old_matrix = copy.deepcopy(matrix)
             matrix[i][0] = row[0]
@@ -43,6 +44,7 @@ def max_cost_path(matrix):
                 matrix[i][j + 1] = max(matrix[i][j + 1], matrix[i - 1][j] + old_matrix[i][j + 1])
                 new_index.add(j + 1)
             index = new_index
+            print(index)
     print(matrix)
     return int(max(matrix[-1]))
 
@@ -53,8 +55,10 @@ def max_cost_path(matrix):
 if __name__ == "__main__":
     timer = Timer()
     timer.start()
-    tri = import_triangle_from_file('data/problem18.txt')
+    tri = import_triangle_from_file('data/problem67.txt')
+    timer.elapsed()
     mat = triangle_to_array(tri)
+    timer.elapsed()
     cost_path = max_cost_path(mat)
     print(cost_path)
     timer.stop()

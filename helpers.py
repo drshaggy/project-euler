@@ -1,9 +1,10 @@
 import time
 from matplotlib import pyplot as plt
+import numpy as np
 
 
 # ---------------------------------------------------------
-# A class that will time the execution
+# Pyplot functions
 # ---------------------------------------------------------
 def plot_from_file(file):
     with open(file, 'r') as file:
@@ -59,12 +60,17 @@ def get_prime_factors(n):
 
 
 # ---------------------------------------------------------
+# Algorithms
+# ---------------------------------------------------------
+
+
+# ---------------------------------------------------------
 # A class that will time the execution
 # ---------------------------------------------------------
 class Timer:
     def __init__(self):
         self.start_time = None
-        self.elapsed = None
+        self.elapsed_time = None
 
     def start(self):
         self.start_time = time.time()
@@ -72,8 +78,17 @@ class Timer:
 
     def stop(self):
         if self.start_time:
-            self.elapsed = time.time() - self.start_time
-            print('Elapsed Time: %.2f seconds' % self.elapsed)
-            return self.elapsed
+            self.elapsed_time = time.time() - self.start_time
+            self.start_time = None
+            print('Elapsed Time: %.2f seconds' % self.elapsed_time)
+            return self.elapsed_time
+        else:
+            print("Timer not started")
+
+    def elapsed(self):
+        if self.start_time:
+            self.elapsed_time = time.time() - self.start_time
+            print('Elapsed Time: %.2f seconds' % self.elapsed_time)
+            return self.elapsed_time
         else:
             print("Timer not started")
