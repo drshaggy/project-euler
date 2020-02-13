@@ -59,6 +59,11 @@ def get_prime_factors(n):
         yield n
 
 
+def sum_proper_divisors(n):
+    factors = get_factors(n)[:-1]
+    return sum(factors)
+
+
 # ---------------------------------------------------------
 # Algorithms
 # ---------------------------------------------------------
