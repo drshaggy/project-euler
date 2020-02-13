@@ -1,5 +1,9 @@
-import time
+from helpers import Timer
 
+# ------
+# ---------------------------------------------------
+# Helper Methods
+# ---------------------------------------------------------
 def isMultiple(x):
     flag = True
     for a in range(21,1,-1):
@@ -8,13 +12,20 @@ def isMultiple(x):
             break
     return flag
 
+
 def smallestMultiple():
-    i=1
+    i = 1
     while isMultiple(i) == False:
         i += 1
     return i
 
-startTime = time.time()
-print smallestMultiple()
-stopTime = time.time()
-print "Time Elapsed: %f seconds" % (stopTime - startTime)
+
+# ---------------------------------------------------------
+# Execution
+# ---------------------------------------------------------
+if __name__ == "__main__":
+    timer = Timer()
+    timer.start()
+    print(smallestMultiple())
+    timer.stop()
+
