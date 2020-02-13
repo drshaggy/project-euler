@@ -70,6 +70,21 @@ def sum_proper_divisors(n):
 
 
 # ---------------------------------------------------------
+# Sequences
+# ---------------------------------------------------------
+def fibonacci_sequence(n):
+    seq = []
+    for i in range(1, n + 1):
+        if i == 1 or i == 2:
+            seq.append(1)
+        elif i == n:
+            seq.append((seq[i - 2] + seq[i - 3]))
+            return seq
+        else:
+            seq.append(seq[i - 2] + seq[i - 3])
+
+
+# ---------------------------------------------------------
 # A class that will time the execution
 # ---------------------------------------------------------
 class Timer:
