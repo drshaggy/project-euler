@@ -16,8 +16,7 @@ def generate_fibonacci(elements):
 
 def calc_next_element(sequence):
     # Calculates next element to fibonacci sequence
-    size = len(sequence)
-    element = sum([sequence[size - 2], sequence[size - 1]])
+    element = sequence[:-1] + sequence[:-2]
     return element
 
 
