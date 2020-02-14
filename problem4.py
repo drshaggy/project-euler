@@ -1,22 +1,32 @@
-import time
+from helpers import Timer
 
-def checkPalindrome(x):
+
+# ---------------------------------------------------------
+# Helper Methods
+# ---------------------------------------------------------
+def is_palindrome(x):
     string = str(x)
     reverse = string[::-1]
     return string == reverse
 
-def largestPalindromeProduct():
+
+def largest_palindrome_product():
     arr = []
     for a in range(999,99,-1):
         for b in range(999,99,-1):
             x = a*b
-            if checkPalindrome(x) == True:
+            if is_palindrome(x):
                 arr.append(x)
             else:
                 pass
     return max(arr)
 
-startTime = time.time()
-print largestPalindromeProduct()
-stopTime = time.time()
-print "Time Elapsed: %f seconds" % (stopTime - startTime)
+
+# ---------------------------------------------------------
+# Execution
+# ---------------------------------------------------------
+if __name__ == "__main__":
+    timer = Timer()
+    startTime = timer.start()
+    print(largest_palindrome_product())
+    timer.stop()

@@ -1,6 +1,6 @@
 import time
 from matplotlib import pyplot as plt
-import numpy as np
+import math
 
 
 # ---------------------------------------------------------
@@ -67,6 +67,28 @@ def sum_proper_divisors(n):
 # ---------------------------------------------------------
 # Algorithms
 # ---------------------------------------------------------
+def sieve_of_eratosthenes(limit):
+    running = True
+    primes = [2]
+    sieve = set(range(2, limit))
+    p = 2
+    while running:
+        n = 1
+        remove = set()
+        while n * p < limit:
+            remove.add(n * p)
+            n += 1
+        sieve = sieve.difference(remove)
+        try:
+            if is_prime(min(sieve)):
+                p = min(sieve)
+                primes.append(p)
+            else:
+                running = False
+        except ValueError:
+            running = False
+    primes.sort()
+    return primes
 
 
 # ---------------------------------------------------------
